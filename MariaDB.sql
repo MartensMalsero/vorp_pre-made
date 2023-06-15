@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `identifier` (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `bank_users` (
+CREATE TABLE IF NOT EXISTS `bank_users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `identifier` varchar(50) NOT NULL COLLATE 'utf8mb4_bin',
@@ -122,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `characters` (
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
-CREATE TABLE `housing`  (
+CREATE TABLE IF NOT EXISTS `housing`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `charidentifier` int(11) NOT NULL,
@@ -132,7 +132,7 @@ CREATE TABLE `housing`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 34307 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
-CREATE TABLE `rooms`  (
+CREATE TABLE IF NOT EXISTS `rooms`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `interiorId` int(11) NOT NULL,
   `inventory` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
@@ -322,7 +322,7 @@ CREATE TABLE IF NOT EXISTS `wagons` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 
-CREATE TABLE `whitelist` (
+CREATE TABLE IF NOT EXISTS `whitelist` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `identifier` VARCHAR(50) NOT NULL COLLATE 'utf8mb4_bin',
     `status` TINYINT(1) NULL DEFAULT NULL,
@@ -1146,7 +1146,7 @@ INSERT INTO `items` (`item`, `label`, `limit`, `can_remove`, `type`, `usable`, `
 ('money_coin','Coin',10,1,'item_standard',1,1668,'{}','A simple metal coin'),
 ('money_coinpurse','Coin Purse',10,1,'item_standard',1,1669,'{}','A small coin purse.'),
 ('pearl','Pearl',10,1,'item_standard',1,1670,'{}','A hard, glistening object produced within the soft tissue of a living shelled mollusk.'),
-('planttrimmer','Plant Trimmer',10,1,'item_standard',1,1671,'{}','A set plant trimmers to keep the weeds in check.'),
+('planttrimmer2','Plant Trimmer',10,1,'item_standard',1,1671,'{}','A set plant trimmers to keep the weeds in check.'),
 ('provision_arrowhead_agate','Agate Arrowhead',10,1,'item_standard',1,1672,'{}','A rare arrowhead fashioned from sharp, colorful agate.'),
 ('provision_arrowhead_bone','Bone Arrowhead',10,1,'item_standard',1,1673,'{}','A serrated arrowhead made from animal bone.'),
 ('provision_arrowhead_chipped','Chipped Arrowhead',10,1,'item_standard',1,1674,'{}','A hurriedly made arrowhead made from chiseled flint.'),
